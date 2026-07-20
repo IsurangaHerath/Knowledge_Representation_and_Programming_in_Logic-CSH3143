@@ -1,0 +1,80 @@
+color(green).
+color(blue).
+color(yellow).
+color(purple).
+
+adjacency(X, Y) :-
+    color(X),
+    color(Y),
+    X \= Y.
+
+map(
+    Northern,
+    NorthCentral,
+    NorthWestern,
+    Eastern,
+    Central,
+    Sabaragamuwa,
+    Western,
+    Uva,
+    Southern
+) :-
+
+    Northern = green,
+    Western  = green,
+    Uva      = green,
+
+    % Northern
+    adjacency(Northern, NorthWestern),
+    adjacency(Northern, NorthCentral),
+    adjacency(Northern, Eastern),
+
+    % North Central
+    adjacency(NorthCentral, Northern),
+    adjacency(NorthCentral, NorthWestern),
+    adjacency(NorthCentral, Eastern),
+    adjacency(NorthCentral, Central),
+    % Eastern
+    adjacency(Eastern, Northern),
+    adjacency(Eastern, NorthCentral),
+    adjacency(Eastern, Uva),
+    adjacency(Eastern, Southern),
+    adjacency(Eastern, Central),
+
+    % North Western
+    adjacency(NorthWestern, Northern),
+    adjacency(NorthWestern, NorthCentral),
+    adjacency(NorthWestern, Central),
+    adjacency(NorthWestern, Sabaragamuwa),
+    adjacency(NorthWestern, Western),
+
+    % Central
+    adjacency(Central, NorthCentral),
+    adjacency(Central, NorthWestern),
+    adjacency(Central, Eastern),
+    adjacency(Central, Uva),
+    adjacency(Central, Sabaragamuwa),
+
+    % Sabaragamuwa
+    adjacency(Sabaragamuwa, Central),
+    adjacency(Sabaragamuwa, NorthWestern),
+    adjacency(Sabaragamuwa, Western),
+    adjacency(Sabaragamuwa, Southern),
+    adjacency(Sabaragamuwa, Uva),
+
+    % Western
+    adjacency(Western, NorthWestern),
+    adjacency(Western, Sabaragamuwa),
+    adjacency(Western, Southern),
+
+    % Uva
+    adjacency(Uva, Eastern),
+    adjacency(Uva, Southern),
+    adjacency(Uva, Sabaragamuwa),
+    adjacency(Uva, Central),
+
+    % Southern
+    adjacency(Southern, Western),
+    adjacency(Southern, Sabaragamuwa),
+    adjacency(Southern, Uva),
+    adjacency(Southern, Eastern).
