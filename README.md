@@ -7,3 +7,7 @@ This program demonstrates fact-based logic in Prolog. Knowledge is represented a
 **loops_and_decisions.pl**
 
 This program demonstrates recursive logic to perform looping, where a function repeatedly calls itself until a base case is reached. It also demonstrates decision-making logic using multiple rules, where Prolog evaluates conditions from top to bottom and executes the first rule whose condition is true
+
+**operators.pl**
+
+This program uses arithmetic evaluation logic. It performs mathematical calculations using Prolog's is operator, evaluates arithmetic expressions, stores the results in variables, and displays the computed values.
