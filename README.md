@@ -11,3 +11,7 @@ This program demonstrates recursive logic to perform looping, where a function r
 **operators.pl**
 
 This program uses arithmetic evaluation logic. It performs mathematical calculations using Prolog's is operator, evaluates arithmetic expressions, stores the results in variables, and displays the computed values.
+
+**logic.pl**
+
+This program uses logical conjunction (AND) and disjunction (OR). It combines multiple conditions with AND to infer parent relationships and uses OR to determine whether a person is a child of either a father or a mother.
